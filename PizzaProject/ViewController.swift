@@ -10,14 +10,17 @@ import UIKit
 
 protocol AllenInterface {
     func pizzaTime(arr: [Pizza]) -> Int
-    func addPizzas(int: Int)
+    func addPizzas(int: Pizza)
 }
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        pizz.addPizzas(int: pizz)
+        pizzz.last?.pizzaTime(arr: pizzz)
+        
+        print("meow")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,4 +30,38 @@ class ViewController: UIViewController {
 
 //
 }
+class Pizza: AllenInterface {
+    var pizzaAmount = [Pizza]()
+    var cheese : String
+    var topping : String
+    var size : String
+    
+    
+    
+    init(cheese : String, topping : String, size : String) {
+        self.size = size
+        self.topping = topping
+        self.cheese = cheese
+        
+    }
+    
+    
+    internal func addPizzas(int: Pizza) {
+        pizzaAmount.append(int)
+    }
+
+    internal func pizzaTime(arr: [Pizza]) -> Int {
+        
+        let amount = arr.count
+        
+        print("meow pizza time \(arr.count * 10)")
+        return amount * 10
+    }
+
+    
+}
+
+var pizz = Pizza(cheese: "cheese", topping: "topping", size: "a size")
+var piz2 = Pizza(cheese: "cheeeseee", topping: "tooooppping", size: "another size")
+var pizzz : [Pizza] = [pizz, piz2]
 
