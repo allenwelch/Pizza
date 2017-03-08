@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol AllenInterface {
+    func pizzaTime(arr: [Int])
+    func addPizzas(int: Int)
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
