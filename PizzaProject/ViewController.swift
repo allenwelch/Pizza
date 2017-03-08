@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AllenInterface {
-    func pizzaTime(arr: [Int])
+    func pizzaTime(arr: [Pizza]) -> Int
     func addPizzas(int: Int)
 }
 
